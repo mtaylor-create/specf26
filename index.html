@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101923">
+  <title>Wildlands — block by block</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="game" aria-label="Wildlands voxel exploration game">
+    <canvas id="view" aria-label="Game world"></canvas>
+    <div class="vignette" aria-hidden="true"></div>
+    <div class="reticle" aria-hidden="true"><i></i><b></b></div>
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">✳</span><span>WILDLANDS</span></div>
+      <div class="coordinates"><span class="live-dot"></span><span id="coords">0, 0, 0</span></div>
+      <button id="sound-toggle" class="sound-toggle" title="Toggle sound" aria-label="Toggle sound">♫ <span>Sound on</span></button>
+    </header>
+    <section class="status-card" aria-label="Player status">
+      <div class="status-heading"><span class="eyebrow">FIELD NOTES</span><span class="sun-icon">☼</span></div>
+      <div class="status-title">A world of your own</div>
+      <div class="status-subtitle">Find a place to make it yours.</div>
+      <div class="status-divider"></div>
+      <div class="status-row"><span>GROUND</span><strong id="ground-status">—</strong></div>
+      <div class="status-row"><span>REGION</span><strong id="region-status">Wildlands</strong></div>
+    </section>
+    <aside class="hint-card" id="hint-card">
+      <span class="hint-icon">⌖</span>
+      <div><strong>Look around</strong><span>There’s a whole world out there.</span></div>
+      <button id="dismiss-hint" aria-label="Dismiss hint">×</button>
+    </aside>
+    <div class="bottom-ui">
+      <div class="controls"><span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd><em>move</em></span><span><kbd>⇧</kbd><em>run</em></span><span><kbd>SPACE</kbd><em>jump</em></span><span><kbd>⌖</kbd><em>look</em></span></div>
+      <div class="hotbar-wrap"><div id="hotbar" class="hotbar" aria-label="Block inventory"></div><div class="bar-caption"><span><b id="selected-name">Grass</b> <span id="selected-hint">Blocks grow best outside.</span></span><span class="select-help">PRESS <kbd>1</kbd>—<kbd>5</kbd> TO SELECT</span></div></div>
+    </div>
+    <section class="start-screen" id="start-screen">
+      <div class="start-panel">
+        <div class="start-kicker"><span></span> YOUR NEXT ADVENTURE</div>
+        <div class="hero-glyph">✳</div>
+        <h1>Make room<br>for <i>wonder.</i></h1>
+        <p>A quiet place to wander, gather, and build something all your own.</p>
+        <button id="play-button" class="play-button"><span>Step into the wild</span><b>↗</b></button>
+        <div class="start-foot"><span>NO MAP. NO RUSH.</span><span>JUST YOU &amp; THE WILDLANDS</span></div>
+      </div>
+      <div class="start-decoration"><span class="deco-star">✳</span><span class="deco-line"></span><span>01 / A NEW BEGINNING</span></div>
+    </section>
+    <div class="pause-screen hidden" id="pause-screen"><div class="pause-panel"><span class="eyebrow">TAKE YOUR TIME</span><h2>Paused.</h2><p>Your world is right where you left it.</p><button id="resume-button" class="play-button"><span>Back to wandering</span><b>↗</b></button><div class="pause-help"><kbd>ESC</kbd> TO RESUME</div></div></div>
+    <div class="toast" id="toast" aria-live="polite"></div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
